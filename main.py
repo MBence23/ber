@@ -36,7 +36,13 @@ class Ber:
             if szolnoki.szuletes > max_szolnoki.szuletes:
                 max_szolnoki = szolnoki
             
-        
+    # Hatvani dolgozók fizetése:
+    def hatvani_fizetes(self):
+        osszeg = 0
+        for dolgozo in self.dolgozoLista:
+            if dolgozo.telepules == "Hatvan":
+                osszeg = osszeg + int(dolgozo.fizetes)
+        print("Hatvaniak fizetése:", osszeg)
 
 
 # class Ber vége
@@ -44,3 +50,4 @@ class Ber:
 ber = Ber()
 ber.olvas_fajl()
 ber.szolnoki()
+ber.hatvani_fizetes()
